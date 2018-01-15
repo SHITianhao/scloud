@@ -8,6 +8,7 @@
         "email": "shi.tianhao.sth@gmail.com"
     },
     "dependencies": {
+        "ali-oss": "^4.11.4",
         "axios": "^0.17.1",
         "bcrypt": "^1.0.3",
         "body-parser": "^1.18.2",
@@ -38,6 +39,13 @@
             "location": "US",
             "password": "maxile"
         },
-        "mongodb": "mongodb://localhost:27017/maxile-drive"
+        "mongodb": "mongodb://localhost:27017/maxile-drive",
+        "objectStorage": {
+            "service": "oss",
+            "accessKeyID": "LTAIFQQUte9dtqEA",
+            "accessKeySecret": "12yxmRyxoSslzxn3cN0Z9XqDKucO1T",
+            "bucket": "tshi-cloud",
+            "region": "oss-us-west-1"
+        }
     }
 }

@@ -13,6 +13,9 @@ const path = require('path');
 const ROOT_PATH = __dirname;
 const ROOT_FILE_FOLDER = path.join(ROOT_PATH, 'nodeServer');
 const FORM_TEMP_FOLDER = path.join(ROOT_FILE_FOLDER, 'tmp');
+const DATA_FOLDER = path.join(ROOT_FILE_FOLDER, 'data');
+
+
 const UPLOAD_TEMP_FOLDER = path.join(ROOT_FILE_FOLDER, 'uploads');
 const COMBINED_FILE_FOLDER = path.join(ROOT_FILE_FOLDER, 'combined');
 
@@ -20,17 +23,21 @@ const FILE_CHUNK_SIZE = 1024 * 1024 * 20; // 20MB
 
 const MONGODB_URL = pkg.config.mongodb;
 
+const OBJECT_STORAGE_CONFIG = pkg.config.objectStorage;
+
 module.exports = {
     pkg,
     FORM_TEMP_FOLDER,
-    UPLOAD_TEMP_FOLDER,
     ROOT_PATH,
     ROOT_FILE_FOLDER,
+    DATA_FOLDER,
+    UPLOAD_TEMP_FOLDER,
     COMBINED_FILE_FOLDER,
     US_IP,
     CHINA_IP,
     LOCATION,
     PORT,
     FILE_CHUNK_SIZE,
-    MONGODB_URL
+    MONGODB_URL,
+    OBJECT_STORAGE_CONFIG
 }

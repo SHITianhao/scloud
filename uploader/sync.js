@@ -3,7 +3,7 @@ const path = require('path');const mongoose = require('mongoose');
 const UploadFile = mongoose.model('File');
 const request = require('request');
 const constants = require('./constants');
-const { mergeFiles, creatFolder, deleteFolder } = require('./utils');
+const { mergeFiles, createFolder, deleteFolder } = require('./utils');
 
 let syncAddress;
 if(constants.LOCATION === 'CHINA') {
@@ -37,7 +37,7 @@ const syncOnChunk = async (uploadFolderPath, file, chunkIndex) => {
 
 const addFile = async (uploadFile) => {
     const uploadFolderPath = path.join(constants.UPLOAD_TEMP_FOLDER, uploadFile.md5);
-    const created = await creatFolder(uploadFolderPath);
+    const created = await createFolder(uploadFolderPath);
 
     let syncSuccess = true;
     for(let chunkIndex = 0; chunkIndex < uploadFile.chunks.length; chunkIndex++) {

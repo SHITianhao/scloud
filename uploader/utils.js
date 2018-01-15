@@ -31,7 +31,7 @@ const listDir = async (path) => {
 // 合并文件
 const mergeFiles = async (srcDir, targetDir, userId, newFileName, size) => {
     const userFolderPath = path.join(targetDir, userId);
-    await creatFolder(userFolderPath);
+    await createFolder(userFolderPath);
     const newFilePath = path.join(userFolderPath, newFileName);
     const targetStream = fs.createWriteStream(newFilePath);
     const fileArr = await listDir(srcDir);
@@ -91,7 +91,7 @@ const isExist = async (filePath) => {
 }
 
 // 文件夹是否存在, 不存在则创建文件
-const creatFolder = async (folderPath) => {
+const createFolder = async (folderPath) => {
     const exist = await isExist(folderPath);
     return new Promise((resolve, reject) => {
         if(!exist) fs.mkdir(folderPath, err => {
@@ -149,7 +149,7 @@ module.exports = {
     mergeFiles,
     listDir,
     moveFile,
-    creatFolder,
+    createFolder,
     deleteFolder,
     promifyFormParse
 }

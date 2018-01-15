@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 
 const constants = require('../constants');
 
-const { promifyFormParse, creatFolder, moveFile, deleteFolder, mergeFiles } = require('../utils');
+const { promifyFormParse, createFolder, moveFile, deleteFolder, mergeFiles } = require('../utils');
 const { evaluate } = require('../jwt')
 
 const formidable = require('formidable');
@@ -35,7 +35,7 @@ router.post('/start', bodyParser.json(), evaluate, async (req, res, next) => {
             await uploadFile.save();
         }
         const uploadTempFolder = path.join(constants.UPLOAD_TEMP_FOLDER, md5);
-        const created = await creatFolder(uploadTempFolder);
+        const created = await createFolder(uploadTempFolder);
         res.json({
             fileId: uploadFile._id,
             completed: uploadFile.completed,
