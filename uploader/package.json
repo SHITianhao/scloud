@@ -42,9 +42,9 @@
         "mongodb": "mongodb://localhost:27017/maxile-drive",
         "objectStorage": {
             "service": "oss",
-            "accessKeyID": "LTAIFQQUte9dtqEA",
-            "accessKeySecret": "12yxmRyxoSslzxn3cN0Z9XqDKucO1T",
-            "bucket": "tshi-cloud",
+            "accessKeyID": "",
+            "accessKeySecret": "",
+            "bucket": "",
             "region": "oss-us-west-1"
         }
     }
